@@ -5,12 +5,12 @@ API_KEY = 'YOUR_API_KEY'
 
 # Wallet Addresses
 wallet_addresses = [
-    '0xA',
-    '0xB',
+    '0xVitalik1238845',
+    '0xBasgfndf654360',
 ]
 
 # Token Address
-token_address = '0x9879406C2EF6578CEB59009D64151Ef3f225830b'
+token_address = '0xUSDT'
 
 def get_token_balances(wallet_addresses, token_address, api_key):
     balances = {}
@@ -21,8 +21,9 @@ def get_token_balances(wallet_addresses, token_address, api_key):
         data = response.json()
 
         if data['status'] == '1':
-            balance = data['result']
-            balances[address] = balance
+            balance_wei = int(data['result'])
+            balance_eth = balance_wei // 10**18
+            balances[address] = balance_eth
         else:
             balances[address] = 'Error fetching balance'
 

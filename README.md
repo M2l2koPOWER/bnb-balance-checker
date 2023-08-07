@@ -14,7 +14,7 @@ wallet_addresses = [
 ]
 ```
 
-To import a token, you need to insert the contract address into `token_address`
+To import a token, you need to paste the contract address into `token_address`
 
 example: 
 ```sh
